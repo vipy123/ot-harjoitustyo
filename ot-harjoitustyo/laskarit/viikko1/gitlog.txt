@@ -1,0 +1,141 @@
+kurssit
+└── ot2019
+    └── viikko1
+        └── Unicafe
+            ├── pom.xml
+            └── src
+                ├── main
+                │   ├── java
+                │   │   └── com
+                │   │       └── mycompany
+                │   │           └── unicafe
+                │   │               ├── Kassapaate.java
+                │   │               ├── Maksukortti.java
+                │   │               └── Paaohjelma.java
+                │   └── resources
+                └── test
+                    └── java
+                        └── com
+                            └── mycompany
+                                └── unicafe
+                                    └── MaksukorttiTest.java
+
+15 directories, 5 files
+
+vipy@lx8-fuxi172:~/Documents/OT_Viikko1$ git log --stat |cat
+commit d2c580132e0628753eaead4212796795fa208f19
+Author: vipy <vilma.pylkko@helsinki.fi>
+Date:   Tue Mar 12 17:15:51 2019 +0200
+
+    tiedostoja kansion sisään
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit da056c00fb4d7c698623fc2e0e0df5c4c4c420b3
+Author: vipy <vilma.pylkko@helsinki.fi>
+Date:   Tue Mar 12 17:08:56 2019 +0200
+
+    lisätty taas kolmanteen jotain
+
+ kolmas.txt | 23 +++++++++++++++++++++++
+ 1 file changed, 23 insertions(+)
+
+commit 7cf6c9018cbe337212130fec508ec2d80b778b91
+Author: vipy <vilma.pylkko@helsinki.fi>
+Date:   Tue Mar 12 17:04:47 2019 +0200
+
+    uudestaan...
+
+ kolmas.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit ae2c1374ec9605d8524fd90534f7755d4cbcf7d8
+Author: vipy <vilma.pylkko@helsinki.fi>
+Date:   Tue Mar 12 17:03:23 2019 +0200
+
+    ekaan ja kolmanteen jotain
+
+ eka.txt    | 1 +
+ kolmas.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit d3aa7c3f7fff1fcad48a9772ddb7b301e6103d9d
+Author: vipy <vilma.pylkko@helsinki.fi>
+Date:   Tue Mar 12 16:46:05 2019 +0200
+
+    tiedostoja muuteltu
+
+ tiedosto.txt => eka.txt |  0
+ toinen.txt              | 24 ------------------------
+ 2 files changed, 24 deletions(-)
+
+commit acc08c9d98621ad9f9e6db9e14d3c5b931c12efe
+Author: vipy <vilma.pylkko@helsinki.fi>
+Date:   Tue Mar 12 16:42:21 2019 +0200
+
+    lisää tekstiä
+
+ tiedosto.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 51d09afd8c2e7890d877fa0d160b11594ad1cbfb
+Author: vipy <vilma.pylkko@helsinki.fi>
+Date:   Tue Mar 12 16:40:53 2019 +0200
+
+    lisätty tekstiä
+
+ tiedosto.txt | 24 +-----------------------
+ 1 file changed, 1 insertion(+), 23 deletions(-)
+
+commit a73cc1d3d19d13fdfa355bb095a426653a682627
+Author: vipy <vilma.pylkko@helsinki.fi>
+Date:   Tue Mar 12 16:34:58 2019 +0200
+
+    Uusi stuff-kansio lisätty
+
+ stuff/kumiankka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit a05f3dd3854efef295b70c7708aafac610c35199
+Author: vipy <vilma.pylkko@helsinki.fi>
+Date:   Tue Mar 12 16:33:13 2019 +0200
+
+    muokattu tiedostoja toinen.txt ja kolmas.txt
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit 6f6df4b026bd4d89c225984f1a8f605ce91fa5e7
+Author: vipy <vilma.pylkko@helsinki.fi>
+Date:   Tue Mar 12 16:31:11 2019 +0200
+
+    kolmas.txt lisatty
+
+ Kurssit.txt | 23 -----------------------
+ kolmas.txt  |  0
+ toinen.txt  | 23 +++++++++++++++++++++++
+ 3 files changed, 23 insertions(+), 23 deletions(-)
+
+commit 59929cd40e1181a0e9e14a50984e441fd2768882
+Author: vipy <vilma.pylkko@helsinki.fi>
+Date:   Tue Mar 12 16:24:33 2019 +0200
+
+    Hello ot!
+
+ Kurssit.txt  | 23 +++++++++++++++++++++++
+ tiedosto.txt | 23 +++++++++++++++++++++++
+ toinen.txt   |  0
+ 3 files changed, 46 insertions(+)
+
+commit c3291f3229282422c1faa8fe3f216e7a564d75b3
+Author: vipy <vilma.pylkko@helsinki.fi>
+Date:   Tue Mar 12 16:16:50 2019 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)

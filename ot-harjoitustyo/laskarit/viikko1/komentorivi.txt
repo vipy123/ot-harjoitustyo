@@ -1,0 +1,9 @@
+vipy@lx8-fuxi172:~/Documents$ tree Ohjelmistotekniikka/
+Ohjelmistotekniikka/
+├── ot
+├── ot-harjoitustyo
+│   └── laskarit
+│       └── viikko1
+└── README.md
+
+3 directories, 2 files
