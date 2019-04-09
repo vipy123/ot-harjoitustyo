@@ -10,5 +10,9 @@ package components;
  * @author vipy
  */
 public class PlantType {
+    public String nimi;
+    public PlantType(String nimi) {
+        this.nimi = nimi;
+    }
     
 }

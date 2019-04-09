@@ -12,9 +12,14 @@ public class Species {
     private String finnishName;
     private String acronym;
     private PlantType type;
+    private String zone;
+    private double adultHeight;
+    private double spacing;
+    private double amountPerSquare;
+    
     private ArrayList<Species> friendlistGroundcreapers;
     private ArrayList<Species> friendlist300_500;
-    private GrowingMedia kasvualusta;
+    private GrowingMedia growMedia;
     private String aurinkoVarjo;
 
     public Species(String finnishName, String latinName) {
@@ -38,6 +43,55 @@ public class Species {
         
         this.acronym =  sb.toString();
         
+    }
+    public Species(String finnishName, String latinName, String zone, double adultHeight,
+            double spacing, double amountPerSquare, GrowingMedia media, PlantType type) {
+        this.latinName = latinName;
+        this.finnishName = finnishName;
+        this.zone = zone;
+        this.growMedia = media;
+        this.type = type;
+        
+    }
+
+    public String getZone() {
+        return zone;
+    }
+
+    public void setZone(String zone) {
+        this.zone = zone;
+    }
+
+    public double getAdultHeight() {
+        return adultHeight;
+    }
+
+    public void setAdultHeight(double adultHeight) {
+        this.adultHeight = adultHeight;
+    }
+
+    public double getSpacing() {
+        return spacing;
+    }
+
+    public void setSpacing(double spacing) {
+        this.spacing = spacing;
+    }
+
+    public double getAmountPerSquare() {
+        return amountPerSquare;
+    }
+
+    public void setAmountPerSquare(double amountPerSquare) {
+        this.amountPerSquare = amountPerSquare;
+    }
+
+    public GrowingMedia getGrowMedia() {
+        return growMedia;
+    }
+
+    public void setGrowMedia(GrowingMedia growMedia) {
+        this.growMedia = growMedia;
     }
 
     public String getLatinName() {
@@ -89,11 +143,11 @@ public class Species {
     }
 
     public GrowingMedia getKasvualusta() {
-        return kasvualusta;
+        return growMedia;
     }
 
     public void setKasvualusta(GrowingMedia kasvualusta) {
-        this.kasvualusta = kasvualusta;
+        this.growMedia = kasvualusta;
     }
 
     public String getAurinkoVarjo() {
@@ -103,5 +157,7 @@ public class Species {
     public void setAurinkoVarjo(String aurinkoVarjo) {
         this.aurinkoVarjo = aurinkoVarjo;
     }
+
+    
     
 }

@@ -10,14 +10,25 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import components.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 import logic.*;
 /**
  *
  * @author vipy
  */
 public class JavaFxSovellus extends Application {
-    public static void main(String[] args) {
+    public static Operations o = new Operations();
+    
+    public static void main(String[] args) throws FileNotFoundException {
+        
+        o.readDataFromFile("Pensasluettelo.csv");
         launch(JavaFxSovellus.class);
+        
+        
+//        for(Species species : o.getPensaat()) {
+//            System.out.println(species.getFinnishName());
+//        }
     }
 
     @Override

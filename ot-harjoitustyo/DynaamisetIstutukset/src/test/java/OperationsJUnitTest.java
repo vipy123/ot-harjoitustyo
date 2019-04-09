@@ -12,6 +12,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import components.*;
 import dynamicPlanting.*;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import logic.*;
 
 /**
@@ -19,12 +23,14 @@ import logic.*;
  * @author vipy
  */
 public class OperationsJUnitTest {
-    
+    public Operations o;
     public OperationsJUnitTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
+        Operations o = new Operations();
+        Species test = new Species("aa", "bb");
     }
     
     @AfterClass
@@ -44,5 +50,11 @@ public class OperationsJUnitTest {
     public void testCreateNewSpecies() {
         assertEquals("Be_pu_ru", Operations.CreateNewSpecies("koivu", "Betula pubescens rubra"));
         
+    }
+    @Test
+    public void testreadDataFromFile() throws FileNotFoundException {
+        o.readDataFromFile("Pensasluettelo.csv");
+        ArrayList<Species> lista = o.getPlants();
+        assertEquals("kääpiöpalsamipihta", lista.get(0).getFinnishName());
     }
 }
