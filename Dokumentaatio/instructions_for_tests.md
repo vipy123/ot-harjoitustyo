@@ -1,0 +1,7 @@
+# Software architecture
+
+
+## Structure
+
+
+
