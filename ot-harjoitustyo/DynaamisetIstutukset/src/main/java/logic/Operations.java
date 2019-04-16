@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package logic;
+
 import components.*;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -15,21 +16,33 @@ import java.io.FileReader;
 import java.util.stream.Stream;
 
 /**
- *
- * @author vipy
+ * Here is where I handle the plant data, read it from files and realize the
+ * button commands.
  */
 public class Operations {
+
     public ArrayList<Species> species;
     public ArrayList<String> rows;
-    public GrowingMedia test = new GrowingMedia(1,2,3,4,5);
+    public GrowingMedia test;
+    public PlantType lpe;
+    public PlantType hpe;
 
-    public static String CreateNewSpecies(String finnishName, String latinName) {
-        Species species = new Species(finnishName, latinName);
-        return species.getAcronym();
-    }
-    public void readDataFromFile(String file) throws FileNotFoundException {
+    public Operations() {
         rows = new ArrayList<>();
         species = new ArrayList<>();
+        test = new GrowingMedia(1, 2, 3, 4, 5);
+        lpe = new PlantType("lpe");
+        hpe = new PlantType("hpe");
+    }
+
+    public Species createNewSpecies(String finnishName, String latinName) {
+        Species species = new Species(finnishName, latinName);
+        return species;
+        //species.getAcronym();
+    }
+
+    public void readDataFromFile(String file) throws FileNotFoundException {
+
         Scanner fileReader = new Scanner(new File(file));
         while (fileReader.hasNextLine()) {
             String rivi = fileReader.nextLine();
@@ -37,7 +50,7 @@ public class Operations {
         }
 //        System.out.println(rows.get(0));
 //        System.out.println(rows.get(1));
-        for(int i = 1; i < rows.size(); i++) {
+        for (int i = 1; i < rows.size(); i++) {
             String[] parts = rows.get(i).split(",");
             try {
                 double num = Double.parseDouble(parts[5]);
@@ -52,14 +65,18 @@ public class Operations {
             s.setSpacing(Double.parseDouble(parts[6]));
             s.setAmountPerSquare(Double.parseDouble(parts[7]));
             s.setGrowMedia(new GrowingMedia(Integer.parseInt(parts[8]),
-                            Integer.parseInt(parts[9]), Integer.parseInt(parts[10]),
-                            Integer.parseInt(parts[11]), Integer.parseInt(parts[12])));
-            s.setType(new PlantType(parts[12]));
-            
-            //System.out.println(s.getFinnishName());
-            System.out.println(species.get(i-1).getFinnishName());
-            System.out.print(i-1);
-            System.out.println("");
+                    Integer.parseInt(parts[9]), Integer.parseInt(parts[10]),
+                    Integer.parseInt(parts[11]), Integer.parseInt(parts[12])));
+            if (parts[13].equals("lpe")) {
+                s.setPlantType(lpe);
+            } else if (parts[13].equals("hpe")) {
+                s.setPlantType(hpe);
+            }
+
+            //System.out.println(s.getFinnishName() + " " + s.getGrowMedia().getAcidity());
+//            System.out.println(species.get(i-1).getFinnishName());
+//            System.out.print(i-1);
+//            System.out.println("");
 
         }
 //        
@@ -68,5 +85,5 @@ public class Operations {
     public ArrayList<Species> getPlants() {
         return species;
     }
-    
+
 }

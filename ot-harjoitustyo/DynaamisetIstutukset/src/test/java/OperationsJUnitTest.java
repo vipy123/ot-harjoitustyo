@@ -23,37 +23,42 @@ import logic.*;
  * @author vipy
  */
 public class OperationsJUnitTest {
-    public Operations o;
+
+    Operations o;
+    Species test;
+
     public OperationsJUnitTest() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
-        Operations o = new Operations();
-        Species test = new Species("aa", "bb");
+
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
+        o = new Operations();
+        test = new Species("aaaa", "bbbb");
     }
-    
+
     @After
     public void tearDown() {
     }
 
-    
     @Test
     public void testCreateNewSpecies() {
-        assertEquals("Be_pu_ru", Operations.CreateNewSpecies("koivu", "Betula pubescens rubra"));
-        
+        Species test = o.createNewSpecies("koivu", "Betula pubescens rubra");
+        assertEquals("koivu", test.getFinnishName());
+
     }
+
     @Test
     public void testreadDataFromFile() throws FileNotFoundException {
-        o.readDataFromFile("Pensasluettelo.csv");
+        o.readDataFromFile("./src/main/resources/Pensasluettelo.csv");
         ArrayList<Species> lista = o.getPlants();
         assertEquals("kääpiöpalsamipihta", lista.get(0).getFinnishName());
     }

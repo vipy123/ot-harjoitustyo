@@ -1,4 +1,3 @@
-
 package components;
 
 import java.util.ArrayList;
@@ -8,6 +7,7 @@ import java.util.ArrayList;
  * @author vipy
  */
 public class Species {
+
     private String latinName;
     private String finnishName;
     private String acronym;
@@ -16,34 +16,34 @@ public class Species {
     private double adultHeight;
     private double spacing;
     private double amountPerSquare;
-    
-    private ArrayList<Species> friendlistGroundcreapers;
-    private ArrayList<Species> friendlist300_500;
+
+    //private ArrayList<Species> friendlistGroundcreapers;
+    //private ArrayList<Species> friendlist300_500;
     private GrowingMedia growMedia;
     private String aurinkoVarjo;
 
     public Species(String finnishName, String latinName) {
         this.finnishName = finnishName;
         this.latinName = latinName;
-        
+
         char[] latinToAcronym = this.latinName.toCharArray();
         StringBuilder sb = new StringBuilder();
         sb.append(Character.toUpperCase(latinToAcronym[0]));
         sb.append(latinToAcronym[1]);
-        
-        
-        for (int i = 2; i < latinToAcronym.length-3; i++) {
+
+        for (int i = 2; i < latinToAcronym.length - 3; i++) {
             if (latinToAcronym[i] == ' ') {
                 sb.append("_");
-                char b = latinToAcronym[i+1];
+                char b = latinToAcronym[i + 1];
                 sb.append(b);
-                sb.append(latinToAcronym[i+2]);
+                sb.append(latinToAcronym[i + 2]);
             }
         }
-        
-        this.acronym =  sb.toString();
-        
+
+        this.acronym = sb.toString();
+
     }
+
     public Species(String finnishName, String latinName, String zone, double adultHeight,
             double spacing, double amountPerSquare, GrowingMedia media, PlantType type) {
         this.latinName = latinName;
@@ -51,7 +51,23 @@ public class Species {
         this.zone = zone;
         this.growMedia = media;
         this.type = type;
-        
+
+        char[] latinToAcronym = this.latinName.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        sb.append(Character.toUpperCase(latinToAcronym[0]));
+        sb.append(latinToAcronym[1]);
+
+        for (int i = 2; i < latinToAcronym.length - 3; i++) {
+            if (latinToAcronym[i] == ' ') {
+                sb.append("_");
+                char b = latinToAcronym[i + 1];
+                sb.append(b);
+                sb.append(latinToAcronym[i + 2]);
+            }
+        }
+
+        this.acronym = sb.toString();
+
     }
 
     public String getZone() {
@@ -118,30 +134,29 @@ public class Species {
         this.acronym = acronym;
     }
 
-    public PlantType getType() {
+    public PlantType getPlantType() {
         return type;
     }
 
-    public void setType(PlantType type) {
+    public void setPlantType(PlantType type) {
         this.type = type;
     }
 
-    public ArrayList<Species> getFriendlistGroundcreapers() {
-        return friendlistGroundcreapers;
-    }
-
-    public void setFriendlistGroundcreapers(ArrayList<Species> friendlistGroundcreapers) {
-        this.friendlistGroundcreapers = friendlistGroundcreapers;
-    }
-
-    public ArrayList<Species> getFriendlist300_500() {
-        return friendlist300_500;
-    }
-
-    public void setFriendlist300_500(ArrayList<Species> friendlist300_500) {
-        this.friendlist300_500 = friendlist300_500;
-    }
-
+//    public ArrayList<Species> getFriendlistGroundcreapers() {
+//        return friendlistGroundcreapers;
+//    }
+//
+//    public void setFriendlistGroundcreapers(ArrayList<Species> friendlistGroundcreapers) {
+//        this.friendlistGroundcreapers = friendlistGroundcreapers;
+//    }
+//
+//    public ArrayList<Species> getFriendlist300_500() {
+//        return friendlist300_500;
+//    }
+//
+//    public void setFriendlist300_500(ArrayList<Species> friendlist300_500) {
+//        this.friendlist300_500 = friendlist300_500;
+//    }
     public GrowingMedia getKasvualusta() {
         return growMedia;
     }
@@ -158,6 +173,4 @@ public class Species {
         this.aurinkoVarjo = aurinkoVarjo;
     }
 
-    
-    
 }

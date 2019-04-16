@@ -6,13 +6,22 @@
 package components;
 
 /**
- *
- * @author vipy
+ * This is the plant type such as leafy or coniferous shrub or perennial
  */
 public class PlantType {
-    public String nimi;
+
+    private String name;
+
     public PlantType(String nimi) {
-        this.nimi = nimi;
+        this.name = nimi;
     }
-    
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String nimi) {
+        this.name = nimi;
+    }
+
 }
