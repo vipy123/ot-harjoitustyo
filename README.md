@@ -3,12 +3,12 @@
 Dynamic planting is a software for maniging plant data and a tool to find suitable plant spacies for dynamic plantations.
 
 ## Dokumentaatio
-[Vaatimusmaarittely](https://github.com/vipy123/ot-harjoitustyo/blob/master/ot-harjoitustyo/Dokumentaatio/Vaatimusmaarittely.md)
+[Vaatimusmaarittely](Dokumentaatio/Vaatimusmaarittely.md)
 
-[Työaikaseuranta](https://github.com/vipy123/ot-harjoitustyo/blob/master/ot-harjoitustyo/Dokumentaatio/Tyoaikaseuranta.md)
+[Työaikaseuranta](Dokumentaatio/Tyoaikaseuranta.md)
 
-[Arkkitehtuuri](https://github.com/vipy123/ot-harjoitustyo/blob/master/ot-harjoitustyo/Dokumentaatio/arkkitehtuuri.md)
+[Arkkitehtuuri](Dokumentaatio/arkkitehtuuri.md)
 
-[ohjeet komentoriviltä suoritettaviin toimenpiteisiin](https://github.com/vipy123/ot-harjoitustyo/blob/master/ot-harjoitustyo/Dokumentaatio/instructions_for_tests.md)
+[ohjeet komentoriviltä suoritettaviin toimenpiteisiin](Dokumentaatio/instructions_for_tests.md)
 
 
