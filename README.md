@@ -11,4 +11,6 @@ Dynamic planting is a software for maniging plant data and a tool to find suitab
 
 [ohjeet komentoriviltä suoritettaviin toimenpiteisiin](Dokumentaatio/instructions_for_tests.md)
 
+[Release viikko 5](https://github.com/vipy123/ot-harjoitustyo/releases)
+
 
