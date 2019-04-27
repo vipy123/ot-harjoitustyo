@@ -24,12 +24,12 @@ public class GrowingMedia implements Comparable<GrowingMedia> {
     //aurinko = 2;
     public int acidicy;
 
-    public GrowingMedia(int moist, int nutrition, int permability, int sunlight, int acidicy) {
+    public GrowingMedia(int moist, int nutrition, int permability, int sunlight, int acidity) {
         this.moist = moist;
         this.nutrition = nutrition;
         this.permability = permability;
         this.sunlight = sunlight;
-        this.acidicy = acidicy;
+        this.acidicy = acidity;
     }
 
     public void setMoist(int moist) {

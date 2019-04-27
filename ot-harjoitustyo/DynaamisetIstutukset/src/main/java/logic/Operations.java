@@ -6,6 +6,7 @@
 package logic;
 
 import components.*;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.nio.file.Files;
@@ -13,6 +14,8 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.stream.Stream;
 
 /**
@@ -39,6 +42,16 @@ public class Operations {
         Species species = new Species(finnishName, latinName);
         return species;
         //species.getAcronym();
+        
+    }
+    
+    public Species createNewSpeciesFullData(String finnishName, String latinName, String zone,
+            double adultheight, double spacing, double amountPerSquare, GrowingMedia growMedia) {
+        Species species = new Species(finnishName, latinName, zone, adultheight, spacing,
+        amountPerSquare, growMedia);
+        return species;
+        //species.getAcronym();
+        
     }
 
     public void readDataFromFile(String file) throws FileNotFoundException {
@@ -57,16 +70,21 @@ public class Operations {
             } catch (NumberFormatException e) {
                 continue;
             }
-            Species s = new Species(parts[2], parts[1]);
-
-            species.add(s);
-            s.setZone(parts[3]);
-            s.setAdultHeight(Double.parseDouble(parts[5]));
-            s.setSpacing(Double.parseDouble(parts[6]));
-            s.setAmountPerSquare(Double.parseDouble(parts[7]));
-            s.setGrowMedia(new GrowingMedia(Integer.parseInt(parts[8]),
+            Species s = new Species(parts[2], parts[1], parts[3], Double.parseDouble(parts[5]),
+                    Double.parseDouble(parts[6]), Double.parseDouble(parts[7]), 
+                    new GrowingMedia(Integer.parseInt(parts[8]),
                     Integer.parseInt(parts[9]), Integer.parseInt(parts[10]),
                     Integer.parseInt(parts[11]), Integer.parseInt(parts[12])));
+
+            
+            species.add(s);
+//            s.setZone(parts[3]);
+//            s.setAdultHeight(Double.parseDouble(parts[5]));
+//            s.setSpacing(Double.parseDouble(parts[6]));
+//            s.setAmountPerSquare(Double.parseDouble(parts[7]));
+//            s.setGrowMedia(new GrowingMedia(Integer.parseInt(parts[8]),
+//                    Integer.parseInt(parts[9]), Integer.parseInt(parts[10]),
+//                    Integer.parseInt(parts[11]), Integer.parseInt(parts[12])));
             if (parts[13].equals("lpe")) {
                 s.setPlantType(lpe);
             } else if (parts[13].equals("hpe")) {
@@ -81,9 +99,50 @@ public class Operations {
         }
 //        
     }
+    public void writeSpeciesToFile(Species s) throws IOException {
+        
+        String row = s.toString();
+        FileWriter fw = new FileWriter("./src/main/resources/Pensasluettelo.csv", true);
+        BufferedWriter bw = new BufferedWriter(fw);
+        bw.newLine();
+        bw.write(row);
+        
+        
+    }
+    public ArrayList<Species> speciesSearchLatin(String latinName) {
+        ArrayList<Species> results = new ArrayList<>();
+        for(int i = 0; i < getPlants().size() -1; i++) {
+            if (getPlants().get(i).getLatinName().equals(latinName)) {
+                results.add(getPlants().get(i));
+            }
+        }
+        return results;
+    }
+    
+    public ArrayList<Species> speciesSearchFin(String finName) {
+        ArrayList<Species> results = new ArrayList<>();
+        for(int i = 0; i < getPlants().size() -1; i++) {
+            if (getPlants().get(i).getFinnishName().equals(finName)) {
+                results.add(getPlants().get(i));
+            }
+        }
+        return results;
+    }
+    
+    public ArrayList<Species> speciesSearch(GrowingMedia gm) {
+        ArrayList<Species> results = new ArrayList<>();
+        for(int i = 0; i < getPlants().size() -1; i++) {
+            if (getPlants().get(i).getGrowMedia().equals(gm)) {
+                results.add(getPlants().get(i));
+            }
+        }
+        return results;
+    }
 
     public ArrayList<Species> getPlants() {
         return species;
     }
+
+    
 
 }

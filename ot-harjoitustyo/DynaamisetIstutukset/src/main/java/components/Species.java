@@ -70,6 +70,31 @@ public class Species {
 
     }
 
+    public Species(String finnishName, String latinName, String zone, double adultHeight,
+            double spacing, double amountPerSquare, GrowingMedia media) {
+        this.latinName = latinName;
+        this.finnishName = finnishName;
+        this.zone = zone;
+        this.growMedia = media;
+
+        char[] latinToAcronym = this.latinName.toCharArray();
+        StringBuilder sb = new StringBuilder();
+        sb.append(Character.toUpperCase(latinToAcronym[0]));
+        sb.append(latinToAcronym[1]);
+
+        for (int i = 2; i < latinToAcronym.length - 3; i++) {
+            if (latinToAcronym[i] == ' ') {
+                sb.append(" ");
+                char b = latinToAcronym[i + 1];
+                sb.append(b);
+                sb.append(latinToAcronym[i + 2]);
+            }
+        }
+
+        this.acronym = sb.toString();
+
+    }
+
     public String getZone() {
         return zone;
     }
@@ -171,6 +196,19 @@ public class Species {
 
     public void setAurinkoVarjo(String aurinkoVarjo) {
         this.aurinkoVarjo = aurinkoVarjo;
+    }
+
+    @Override
+    public String toString() {
+        
+        StringBuilder sb = new StringBuilder();
+        sb.append(acronym + "," + latinName + "," + zone + "," + "" + ","
+                + adultHeight + "," + spacing + "," + amountPerSquare + "," 
+                + growMedia.getMoist() + "," + growMedia.getNutrition() + "," 
+                + growMedia.getPermability() + "," + growMedia.getSunlight()
+                + "," + growMedia.getAcidity());
+        String speciesString = sb.toString();
+        return speciesString;
     }
 
 }
