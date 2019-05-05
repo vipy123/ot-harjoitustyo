@@ -13,10 +13,10 @@ Dynamic planting is a software for maniging plant data and a tool to find suitab
 
 [Releaset](https://github.com/vipy123/ot-harjoitustyo/releases)
 
-[Jar](https://github.com/vipy123/ot-harjoitustyo/blob/master/ot-harjoitustyo/original-DynaamisetIstutukset-1.0-SNAPSHOT.jar)
+[Jar](https://github.com/vipy123/ot-harjoitustyo/releases/download/Final-for-now/DynaamisetIstutukset.jar)
 
 [Jacoco](Dokumentaatio/jacoco-sessions.html)
 [Jacoco tuloste](Dokumentaatio/images/DynaamisetIstutukset_Jacoco-results.pdf)
 
 [CheckStyle](Dokumentaatio/checkstyle.html)
-[Checkstyle tuloste](Dokumentaatio/images/Checkstyle Results.pdf)
+[Checkstyle tuloste](Dokumentaatio/images/Checkstyle_Results.pdf)
