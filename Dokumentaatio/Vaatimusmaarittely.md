@@ -34,12 +34,12 @@ Suunnittelu
 Suuremmat rakennekomponentit
 Ohjelma koostuu: 
 -   javafx-käyttöliittymäluokasta
--   operations-paketin logic-luokasta, jossa hallitaan toimintoja
+-   logic-paketin Operatios-luokasta, jossa hallitaan toimintoja
 -   Components-paketin komponettiluokista eli kasvilajeista, kasvualustoista ja kasvityypeistä eli Species, PlantType ja GrowingMedia.
 -   Kasvitieto-csv-tiedostosta, joka on nimeltään Pensasluettelo.csv
 
 Miten komponentit yhdistetään
--   Main-metodi käynnistyy javafx-luokassa avaten samalla yhteyden logic-luokan kautta kasvitieto-tiedostoon. Käyttäjä valitsee painikkeita käyttöliittymässä, joiden mukaan ohjelma ohjaa uuteen näkymään, joko tiedon lisäys-näkymään tai tiedonhakunäkymään. Logic luokka luo tiedostosta lukemalla komponenttiluokat: Species, PlantType ja GrowingMedia sekä niiden väliset yhteydet. Logic lisäksi tallentaa speciesluokat listalle, josta niitä on helppo operoida. Käyttöliittymän kautta käyttäjä lisää tietoja, mistä logic-luokka joko hakee listalta tietoa tai luo komponenttiluokkiin uutta tietoa.
+-   Main-metodi käynnistyy javafx-luokassa avaten samalla yhteyden Operations-luokan kautta kasvitieto-tiedostoon. Käyttäjä valitsee painikkeita käyttöliittymässä, joiden mukaan ohjelma ohjaa uuteen näkymään, joko tiedon lisäys-näkymään tai tiedonhakunäkymään. Logic luokka luo tiedostosta lukemalla komponenttiluokat: Species, PlantType ja GrowingMedia sekä niiden väliset yhteydet. Logic lisäksi tallentaa speciesluokat listalle, josta niitä on helppo operoida. Käyttöliittymän kautta käyttäjä lisää tietoja, mistä logic-luokka joko hakee listalta tietoa tai luo komponenttiluokkiin uutta tietoa.
 
 Riippuvuudet tietokantoihin tai rajapintoihin
 -   Ohjelmassa haetaan ja viedään tietoa paikalliseen csv-tiedostoon Operations paketin logic-luokan kautta. Tällöin ohjelma säilyy yksinkertaisena eikä tietokantayhteyttä välttämättä tarvita. Se on sopiva yksittäisen ihmisen tai esim. yrityksen käyttöön. Jatkossa ohjelmaa on edelleen mahdollista kehittää tietokantaohjelmaksi.
