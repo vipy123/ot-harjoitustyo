@@ -69,6 +69,7 @@ public class JavaFxSovellus extends Application {
 
     /**
      * This is the main method.
+     *
      * @param args
      * @throws FileNotFoundException
      */
@@ -81,6 +82,7 @@ public class JavaFxSovellus extends Application {
 
     /**
      * This is the start window.
+     *
      * @param window
      * @throws Exception
      */
@@ -100,6 +102,7 @@ public class JavaFxSovellus extends Application {
 
     /**
      * This scene method is the start scene.
+     *
      * @return
      */
     public Scene startScene() {
@@ -110,11 +113,9 @@ public class JavaFxSovellus extends Application {
         Button addDataButton = new Button("Lisää lajitietoa");
         Button findSpeciesButton = new Button("Hae lajitietoa");
 
-
         componentGroup1.add(nimiTeksti, 3, 1);
         componentGroup1.add(addDataButton, 3, 2);
         componentGroup1.add(findSpeciesButton, 3, 3);
-
 
         componentGroup1.setHgap(10);
         componentGroup1.setVgap(10);
@@ -128,6 +129,7 @@ public class JavaFxSovellus extends Application {
 
     /**
      * This scene method is one step towards adding plant data.
+     *
      * @return
      */
     public Scene addDataScene() {
@@ -139,13 +141,11 @@ public class JavaFxSovellus extends Application {
         Label howtoText2 = new Label("Lisää lajitietoa");
         Button addNewSpeciesButton = new Button("Lisää uusi laji");
 
-
         Button backToStartButton = new Button("Palaa takaisin");
 
         componentGroupAddData.add(nimiTeksti2, 3, 1);
         componentGroupAddData.add(howtoText2, 3, 4);
         componentGroupAddData.add(addNewSpeciesButton, 3, 5);
-
 
         componentGroupAddData.add(backToStartButton, 3, 7);
 
@@ -155,14 +155,15 @@ public class JavaFxSovellus extends Application {
 
         backToStartButton.setOnAction((event) -> window.setScene(startScene));
         addNewSpeciesButton.setOnAction((event) -> window.setScene(addNewSpeciesScene));
-        
 
         Scene sceneAdd = new Scene(componentGroupAddData, 1800, 1500);
         return sceneAdd;
     }
 
     /**
-     * This scene method is for adding new species data by user given attributes.
+     * This scene method is for adding new species data by user given
+     * attributes.
+     *
      * @return
      */
     public Scene addNewSpeciesScene() {
@@ -379,6 +380,7 @@ public class JavaFxSovellus extends Application {
 
     /**
      * This scene is for searching species with user given attributes.
+     *
      * @return
      */
     public Scene searchSpeciesScene() {
