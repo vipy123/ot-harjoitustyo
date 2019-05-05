@@ -41,6 +41,11 @@ public class Species {
         }
 
         this.acronym = sb.toString();
+        this.adultHeight = 1;
+        this.spacing = 1.0;
+        this.amountPerSquare = 1;
+        this.growMedia = new GrowingMedia(1, 1, 1, 1, 1);
+        this.type = new PlantType("generic");
 
     }
 
@@ -49,6 +54,9 @@ public class Species {
         this.latinName = latinName;
         this.finnishName = finnishName;
         this.zone = zone;
+        this.adultHeight = adultHeight;
+        this.spacing = spacing;
+        this.amountPerSquare = amountPerSquare;
         this.growMedia = media;
         this.type = type;
 
@@ -75,7 +83,11 @@ public class Species {
         this.latinName = latinName;
         this.finnishName = finnishName;
         this.zone = zone;
+        this.adultHeight = adultHeight;
+        this.spacing = spacing;
+        this.amountPerSquare = amountPerSquare;
         this.growMedia = media;
+        this.type = new PlantType("generic");
 
         char[] latinToAcronym = this.latinName.toCharArray();
         StringBuilder sb = new StringBuilder();
@@ -190,21 +202,14 @@ public class Species {
         this.growMedia = kasvualusta;
     }
 
-    public String getAurinkoVarjo() {
-        return aurinkoVarjo;
-    }
-
-    public void setAurinkoVarjo(String aurinkoVarjo) {
-        this.aurinkoVarjo = aurinkoVarjo;
-    }
-
     @Override
     public String toString() {
-        
+
         StringBuilder sb = new StringBuilder();
-        sb.append(acronym + "," + latinName + "," + zone + "," + "" + ","
-                + adultHeight + "," + spacing + "," + amountPerSquare + "," 
-                + growMedia.getMoist() + "," + growMedia.getNutrition() + "," 
+        sb.append(acronym + "," + latinName + "," + finnishName + "," + zone
+                + "," + " " + ","
+                + adultHeight + "," + spacing + "," + amountPerSquare + ","
+                + growMedia.getMoist() + "," + growMedia.getNutrition() + ","
                 + growMedia.getPermability() + "," + growMedia.getSunlight()
                 + "," + growMedia.getAcidity());
         String speciesString = sb.toString();

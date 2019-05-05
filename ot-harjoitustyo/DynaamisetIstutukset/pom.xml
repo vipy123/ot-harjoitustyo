@@ -27,7 +27,7 @@
                 <version>0.8.0</version>
                 <configuration>
                     <excludes>
-                        <exclude>dynamicPlanting/*</exclude>
+                        <exclude>dynamicplanting/*</exclude>
                     </excludes>
                 </configuration>
                 <executions>
@@ -65,7 +65,7 @@
                         <configuration>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>dynamicPlanting.JavaFxSovellus.java.JavaFxSovellus</mainClass>
+                                    <mainClass>dynamicplanting.JavaFxSovellus.java.JavaFxSovellus</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

@@ -6,7 +6,7 @@ package components;
  *
  * @author vipy
  */
-public class GrowingMedia implements Comparable<GrowingMedia> {
+public class GrowingMedia {
 
     public int moist;
     // tuore = 1;
@@ -52,19 +52,20 @@ public class GrowingMedia implements Comparable<GrowingMedia> {
         this.acidicy = acidicy;
     }
 
-    // I made this compare to -method so the iqual attributes are seen as the 
-    //same growing media. I'm not sure if I should also make some sort of 
-    //equals-method? 
-    @Override
-    public int compareTo(GrowingMedia t) {
-        if (this.moist == t.getMoist() && this.nutrition == t.getNutrition()
-                && this.permability == t.getPermability()
-                && this.sunlight == t.getSunlight()
-                && this.acidicy == t.getAcidity()) {
-            return 0;
+    // I made this equals-method so the equal attributes are seen as the 
+    //same growing media.
+
+
+    public boolean equals(GrowingMedia gm) {
+        if (this.moist == gm.getMoist() && this.nutrition == gm.getNutrition()
+                && this.permability == gm.getPermability()
+                && this.sunlight == gm.getSunlight()
+                && this.acidicy == gm.getAcidity()) {
+            return true;
         } else {
-            return -1;
+            return false;
         }
+
     }
 
     public int getMoist() {

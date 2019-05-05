@@ -1,5 +1,5 @@
 Tunnus,Latinankielinen_nimi,Suomenkielinen_nimi,Menestymisvyohyke,Taimikoko,korkeus täysikasvuisena,istutusvali,kpl/m2,Kuiva-kostea_0-2,Ravinteisuus_0-2,Läpäisevyys_0-1,Aurionko-varjo_0-2,Hapan-emäksinen_0-2,tyyppi,Kukkimisajankohta
-Ab ba N,Abies balsamea 'Nana',kääpiöpalsamipihta,I-VI,40-50,500,500,500,0,0,0,0,0,hpe,
+Ab ba N,Abies balsamea 'Nana',kääpiöpalsamipihta,I-VI,40-50,40,100,1,2,2,2,1,2,hpe,
 Ju co R,Juniperus communis 'Repanda',kääpiökataja,I-VI,40-50,500,0.6,3,0,0,1,2,0,hpe,
 Ju ho G,Juniperus horizontalis 'Glauca',sinilaakakataja,I-III (IV),40-50,500,500,500,0,0,1,2,0,hpe,
 Ju ho P,Juniperus horizontalis 'Prince of Wales',laakakataja,I-III (IV),40-50,0.3,500,500,0,0,1,2,0,hpe,
@@ -52,5 +52,49 @@ Rh Or,Rhododendron ’Orchid Lights’,revontuliatsalea,I-V,30-40,0.9,500,500,1,
 Rh Ro,Rhododendron ’Rosy Lights’,revontuliatsalea,I–V,30-40,0.9,500,500,1,1,1,1,1,lpe,vaal.pun kukat
 Rh Ru,Rhododendron x Rustica Mixture ’Ruususen Uni’ ,atsalea,I–III,30-40,0.7,500,4,1,1,1,1,1,lpe,vaal.pun kukat
 Rh Ta,Rhododenron Tarleena FinE,puistoatsalea,I-IV,30-40,1,500,4,1,1,1,1,1,lpe,Elokuu
-Sp be TG,Spiraea betulifolia `Tor Gold´,keltakoivuangervo,I-VII,40-60,0.7,0.6,500,1,1,1,1,1,lpe,
-Rh V,Rhododendron `Violetta´FinE,kanadanatsalea,500,30-40,0.75,500,5,1,1,1,1,1,lpe,
+Sp be TG,Spiraea betulifolia `Tor Gold´,keltakoivuangervo,I-VII,40-60,0.7,0.6,500,1,1,1,1,1,lpe
+Rh V,Rhododendron `Violetta´FinE,kanadanatsalea,500,30-40,0.75,500,5,1,1,1,1,1,lpe
+Te,test,test,tes, ,20.5,1.0,1.0,1,1,1,1,1
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7
+Te te,Test testins,testFin,xx, ,40.5,1.8,0.6,7,7,7,7,7

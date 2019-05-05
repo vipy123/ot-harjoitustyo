@@ -1,4 +1,4 @@
-package dynamicPlanting;
+package dynamicplanting;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -17,7 +17,9 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.Slider;
+import javafx.scene.control.TextArea;
 import javafx.scene.paint.Color;
 
 import javax.swing.JLabel;
@@ -37,8 +39,6 @@ public class JavaFxSovellus extends Application {
     public Scene addNewSpeciesScene;
     public Scene searchSpeciesScene;
     public Stage window = new Stage();
-
-    
 
     public static void main(String[] args) throws FileNotFoundException {
 
@@ -68,12 +68,12 @@ public class JavaFxSovellus extends Application {
         Label nimiTeksti = new Label("Dynaamiset istutukset");
         Button addDataButton = new Button("Lisää lajitietoa");
         Button findSpeciesButton = new Button("Hae lajitietoa");
-        Button designDynamicPlantingButton = new Button("Suunnittele dynaaminen istutus");
+
 
         componentGroup1.add(nimiTeksti, 3, 1);
         componentGroup1.add(addDataButton, 3, 2);
         componentGroup1.add(findSpeciesButton, 3, 3);
-        componentGroup1.add(designDynamicPlantingButton, 3, 4);
+
 
         componentGroup1.setHgap(10);
         componentGroup1.setVgap(10);
@@ -100,12 +100,6 @@ public class JavaFxSovellus extends Application {
         addToExistingTextFielt.setPrefWidth(300);
         Button backToStartButton = new Button("Palaa takaisin");
 
-        //Asetetaan kosteudelle
-//        moist.setMajorTickSpacing(1);
-//        Hashtable moistLabels = new Hashtable();
-//        moistLabels.put(0, new JLabel("Kuiva"));
-//        moistLabels.put(2, new JLabel("Kostea"));
-//        moist.setLabelTable(moistLabels);
         componentGroupAddData.add(nimiTeksti2, 3, 1);
         componentGroupAddData.add(howtoText2, 3, 4);
         componentGroupAddData.add(addNewSpeciesButton, 3, 5);
@@ -119,6 +113,7 @@ public class JavaFxSovellus extends Application {
 
         backToStartButton.setOnAction((event) -> window.setScene(startScene));
         addNewSpeciesButton.setOnAction((event) -> window.setScene(addNewSpeciesScene));
+        
 
         Scene sceneAdd = new Scene(componentGroupAddData, 1800, 1500);
         return sceneAdd;
@@ -306,13 +301,16 @@ public class JavaFxSovellus extends Application {
 
         //Button actions
         backToStartButton3.setOnAction((event) -> window.setScene(startScene));
-        
+
         //Lisätään uusi laji ja sen tiedot:
         addNewSpeciesDataButton.setOnAction((event) -> {
             String zone = zoneTextField.getText();
-            double adultHeight = Double.parseDouble(adultheightTextField.getText());
-            double spacing = Double.parseDouble(spacingTextField.getText());
-            double amountPerSquare = Double.parseDouble(amountPerSquareTextField.getText());
+            String adultHeightText = adultheightTextField.getText().toString();
+            double adultHeight = Double.parseDouble(adultHeightText);
+            String spacingText = spacingTextField.getText();
+            double spacing = Double.parseDouble(spacingText);
+            String amountPerSquareText = amountPerSquareTextField.getText();
+            double amountPerSquare = Double.parseDouble(amountPerSquareText);
             int moistI = (int) Math.round(moist.getValue());
             int nutritionI = (int) Math.round(nutrition.getValue());
             int permabilityI = (int) Math.round(permability.getValue());
@@ -327,23 +325,7 @@ public class JavaFxSovellus extends Application {
             if (acronymTextFielt.getText().isEmpty()) {
                 acronymTextFielt.setText(acronym);
             }
-
-            species.setGrowMedia(new GrowingMedia(moistI,
-                    nutritionI, permabilityI,
-                    sunlightI, acidityI));
-            try {
-                o.writeSpeciesToFile(species);
-            } catch (NumberFormatException ex) {
-                Logger.getLogger(JavaFxSovellus.class.getName()).log(Level.SEVERE, null, ex);
-                Label errorFill = new Label("Täytäthän kaikki arvot oikein. korkeus, "
-                        + "istutusetäisyys ja istutustiheys ilmoidetaan desimaalilukuna "
-                        + "pisteellä eroteltuna.");
-                Color red = Color.rgb(248, 19, 20);
-                errorFill.setTextFill(red);
-                componentGroupAddNewSpecies.add(errorFill, 3, 3);
-            } catch (IOException ex) {
-                Logger.getLogger(JavaFxSovellus.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            System.out.println(species.getAcronym() + " " + species.getFinnishName());
 
         });
         return sceneAddSpecies;
@@ -359,6 +341,7 @@ public class JavaFxSovellus extends Application {
                 + "tietuetta tai antamalla nimi.");
 
         howtoAddNewSpecies.setPrefWidth(300);
+        howtoAddNewSpecies.setWrapText(true);
         Button searchSpeciesButton = new Button("Etsi lajeja");
         searchSpeciesButton.setPrefWidth(300);
 
@@ -467,6 +450,8 @@ public class JavaFxSovellus extends Application {
         adultheightTextField.setPromptText("Korkeus metreinä täysikasvuisena");
         adultheightTextField.setPrefWidth(100);
 
+        ScrollPane resultSpecies = new ScrollPane();
+        resultSpecies.setPrefSize(300, 500);
 
         Button backToStartButton4 = new Button("Palaa takaisin");
         //Set the components to the Gridpane
@@ -483,7 +468,6 @@ public class JavaFxSovellus extends Application {
 
         componentGroupSearchSpecies.add(zoneTextField, 3, 8);
         componentGroupSearchSpecies.add(adultheightTextField, 3, 9);
-
 
         componentGroupSearchSpecies.add(moistureLabel, 3, 12);
         componentGroupSearchSpecies.add(moist, 5, 12);
@@ -513,6 +497,7 @@ public class JavaFxSovellus extends Application {
         componentGroupSearchSpecies.add(searchSpeciesButton, 3, 23);
 
         componentGroupSearchSpecies.add(backToStartButton4, 3, 25);
+        componentGroupSearchSpecies.add(resultSpecies, 3, 26);
 
         componentGroupSearchSpecies.setHgap(10);
         componentGroupSearchSpecies.setVgap(10);
@@ -521,24 +506,34 @@ public class JavaFxSovellus extends Application {
         Scene sceneSearchSpecies = new Scene(componentGroupSearchSpecies, 1800, 1500);
 
         //Button actions
-        backToStartButton4.setOnAction((event) -> window.setScene(startScene));
-        //Lisätään uusi laji ja sen tiedot:
+        //Etsitään lajia TextFieldeihin syötteiden perusteella.
         int nextRow = 26;
         searchSpeciesButton.setOnAction((event) -> {
+            TextArea ta = new TextArea("");
+            resultSpecies.setContent(ta);
+            StringBuilder sb = new StringBuilder();
+            sb.append("TULOKSET: " + "\n");
             if (finnishTextField.getText().length() > 0) {
                 String finName = finnishTextField.getText();
+
                 ArrayList<Species> result = o.speciesSearchFin(finName);
                 for (int i = 0; i < result.size(); i++) {
-                    Label row = new Label(result.get(i).toString());
-                    componentGroupSearchSpecies.add(row, 3, nextRow+i);
-                    
+                    sb.append(result.get(i).getLatinName() + "  " + result.get(i).getFinnishName()
+                            + " koko: " + result.get(i).getAdultHeight() + "\n");
+                    sb.append("Tämän lajin kanssa sopivat seuraavat lajit: " + "\n");
+                    GrowingMedia gm = result.get(i).getGrowMedia();
+                    ArrayList<Species> friends = o.speciesSearch(gm);
+                    for (int j = 0; j < friends.size(); j++) {
+                        sb.append(friends.get(j).getLatinName() + " " + friends.get(j).getFinnishName()
+                                + " koko: " + friends.get(i).getAdultHeight() + "\n");
+                    }
+
                 }
             } else if (latinTextField.getText().length() > 0) {
                 String latinName = latinTextField.getText();
-            }
-            else {
-                String zone = zoneTextField.getText();
-                double adultHeight = Double.parseDouble(adultheightTextField.getText());
+            } else {
+                //String zone = zoneTextField.getText();
+                //double adultHeight = Double.parseDouble(adultheightTextField.getText());
                 int moistI = (int) Math.round(moist.getValue());
                 int nutritionI = (int) Math.round(nutrition.getValue());
                 int permabilityI = (int) Math.round(permability.getValue());
@@ -547,13 +542,19 @@ public class JavaFxSovellus extends Application {
                 GrowingMedia gm = new GrowingMedia(moistI, nutritionI, permabilityI, sunlightI, acidityI);
                 ArrayList<Species> result = o.speciesSearch(gm);
                 for (int i = 0; i < result.size(); i++) {
-                    Label row = new Label(result.get(i).toString());
-                    componentGroupSearchSpecies.add(row, 3, nextRow+i);
-                    
+                    sb.append(result.get(i).getLatinName() + "  "
+                            + result.get(i).getFinnishName() + " "
+                            + result.get(i).getAdultHeight() + "\n");
                 }
-            }
-            
 
+            }
+            ta.setText(sb.toString());
+            resultSpecies.setContent(ta);
+
+        });
+        backToStartButton4.setOnAction((event) -> {
+            resultSpecies.setContent(new TextArea(""));
+            window.setScene(startScene);
         });
 
         return sceneSearchSpecies;
