@@ -25,18 +25,44 @@ import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 
 /**
- * Here is where I handle the plant data, read it from files and realize the
- * button commands.
+ * Operations class handles chosen operations from the user interface, reads and
+ * writes data from and to files and realizes the button commands.
  */
 public class Operations {
 
+    /**
+     *
+     */
     public ArrayList<Species> species;
+
+    /**
+     *
+     */
     public ArrayList<String> rows;
+
+    /**
+     *
+     */
     public GrowingMedia test;
+
+    /**
+     *
+     */
     public PlantType lpe;
+
+    /**
+     *
+     */
     public PlantType hpe;
+
+    /**
+     *
+     */
     public File file = new File("./src/main/resources/Pensasluettelo.csv");
 
+    /**
+     *
+     */
     public Operations() {
         rows = new ArrayList<>();
         species = new ArrayList<>();
@@ -44,7 +70,14 @@ public class Operations {
         lpe = new PlantType("lpe");
         hpe = new PlantType("hpe");
     }
+    // Creates a new species by a name.
 
+    /**
+     *
+     * @param finnishName
+     * @param latinName
+     * @return
+     */
     public Species createNewSpecies(String finnishName, String latinName) {
         Species speciesA = new Species(finnishName, latinName);
         species.add(speciesA);
@@ -52,6 +85,7 @@ public class Operations {
 
     }
 
+    // Creates a new species with full information.
     public Species createNewSpeciesFullData(String finnishName, String latinName, String zone,
             double adultheight, double spacing, double amountPerSquare, GrowingMedia growMedia) {
         Species speciesS = new Species(finnishName, latinName, zone, adultheight, spacing,
@@ -59,7 +93,6 @@ public class Operations {
         species.add(speciesS);
         String s = "Lisättiin laji: " + speciesS.getLatinName();
 
-        //species.getAcronym();
         try {
             writeSpeciesToFile(speciesS);
         } catch (NumberFormatException ex) {
@@ -75,6 +108,12 @@ public class Operations {
         return speciesS;
     }
 
+    // Reads plant data from a file.
+    /**
+     *
+     * @param file
+     * @throws FileNotFoundException
+     */
     public void readDataFromFile(String file) throws FileNotFoundException {
 
         Scanner fileReader = new Scanner(new File(file));
@@ -82,8 +121,6 @@ public class Operations {
             String rivi = fileReader.nextLine();
             rows.add(rivi);
         }
-//        System.out.println(rows.get(0));
-//        System.out.println(rows.get(1));
         for (int i = 1; i < rows.size(); i++) {
             if (rows.get(i).equals("")) {
                 continue;
@@ -104,7 +141,6 @@ public class Operations {
                             Integer.parseInt(parts[11]), Integer.parseInt(parts[12])));
 
             species.add(s);
-            //System.out.println(species.get(i-1));
             if (parts.length > 13) {
                 if (parts[13].equals("lpe")) {
                     s.setPlantType(lpe);
@@ -112,13 +148,17 @@ public class Operations {
                     s.setPlantType(hpe);
                 }
             }
-            
 
         }
-        //System.out.println(species.get(0));
 
     }
 
+    // Method writes new plant data to a file.
+    /**
+     *
+     * @param s
+     * @throws IOException
+     */
     public void writeSpeciesToFile(Species s) throws IOException {
 
         String row = s.toString();
@@ -131,6 +171,12 @@ public class Operations {
 
     }
 
+    // Method searches species by the latin name.
+    /**
+     *
+     * @param latinName
+     * @return
+     */
     public ArrayList<Species> speciesSearchLatin(String latinName) {
         ArrayList<Species> results = new ArrayList<>();
         for (int i = 0; i < getPlants().size() - 1; i++) {
@@ -141,6 +187,12 @@ public class Operations {
         return results;
     }
 
+    // Method searches species by the finnish name.
+    /**
+     *
+     * @param finName
+     * @return
+     */
     public ArrayList<Species> speciesSearchFin(String finName) {
         ArrayList<Species> results = new ArrayList<>();
         for (int i = 0; i < species.size(); i++) {
@@ -152,6 +204,12 @@ public class Operations {
         return results;
     }
 
+    // Method searches species by the growing media.
+    /**
+     *
+     * @param gm
+     * @return
+     */
     public ArrayList<Species> speciesSearch(GrowingMedia gm) {
         ArrayList<Species> results = new ArrayList<>();
         for (int i = 0; i < species.size(); i++) {
@@ -162,6 +220,11 @@ public class Operations {
         return results;
     }
 
+    // Method returns a list with all plant species.
+    /**
+     *
+     * @return
+     */
     public ArrayList<Species> getPlants() {
         return species;
     }

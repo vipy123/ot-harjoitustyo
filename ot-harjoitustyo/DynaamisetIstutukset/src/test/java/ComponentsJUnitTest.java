@@ -23,18 +23,30 @@ public class ComponentsJUnitTest {
     GrowingMedia gm;
     PlantType t;
 
+    /**
+     *
+     */
     public ComponentsJUnitTest() {
     }
 
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
 
     }
 
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
 
+    /**
+     *
+     */
     @Before
     public void setUp() {
         testS = new Species("Aaaa", "Aaaa bbbb");
@@ -43,45 +55,69 @@ public class ComponentsJUnitTest {
         bigS = new Species("Cccc", "Dddd eeee", "XX", 0.4, 0.4, 0.4, gm, t);
     }
 
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }
 
+    /**
+     *
+     */
     @Test
     public void testSpeciesGetAcronym() {
         String acro = testS.getAcronym();
         assertEquals("Aa_bb", acro);
     }
 
+    /**
+     *
+     */
     @Test
     public void testSpeciesGetPlantType() {
         assertEquals("hpe", bigS.getPlantType().getName());
     }
 
+    /**
+     *
+     */
     @Test
     public void testSpeciesSetZone() {
         testS.setZone("zone");
         assertEquals("zone", testS.getZone());
     }
 
+    /**
+     *
+     */
     @Test
     public void testSpeciesSetAdultHeight() {
         testS.setAdultHeight(0.5);
         assertEquals(0.5, testS.getAdultHeight(), 0.001);
     }
 
+    /**
+     *
+     */
     @Test
     public void testSpeciesSetSpacing() {
         testS.setSpacing(1.5);
         assertEquals(1.5, testS.getSpacing(), 0.001);
     }
 
+    /**
+     *
+     */
     @Test
     public void testSpeciesSetAmountPerSquare() {
         testS.setAmountPerSquare(2.5);
         assertEquals(2.5, testS.getAmountPerSquare(), 0.001);
     }
 
+    /**
+     *
+     */
     @Test
     public void testSpeciesSetGrowMedia() {
         GrowingMedia gm3 = new GrowingMedia(3, 3, 3, 3, 3);
@@ -89,6 +125,9 @@ public class ComponentsJUnitTest {
         assertEquals(gm3, testS.getGrowMedia());
     }
 
+    /**
+     *
+     */
     @Test
     public void testGrowingMediaGetters() {
 
@@ -100,6 +139,9 @@ public class ComponentsJUnitTest {
 
     }
     
+    /**
+     *
+     */
     @Test
     public void testGrowingMediaSetters() {
         GrowingMedia gm6 = new GrowingMedia(8, 8, 8, 8, 8);
@@ -117,6 +159,9 @@ public class ComponentsJUnitTest {
 
     }
 
+    /**
+     *
+     */
     @Test
     public void testGrowingMediaEquals() {
         GrowingMedia gm2 = new GrowingMedia(5, 5, 5, 5, 5);
@@ -139,6 +184,9 @@ public class ComponentsJUnitTest {
         assertEquals(false, gmEquals5);
     }
     
+    /**
+     *
+     */
     @Test
     public void testGrowingMediaEquals2() {
         GrowingMedia gm2 = new GrowingMedia(3, 5, 5, 5, 5);

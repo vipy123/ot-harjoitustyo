@@ -26,28 +26,46 @@ public class OperationsJUnitTest {
     Operations o;
     Species test;
 
+    /**
+     *
+     */
     public OperationsJUnitTest() {
     }
 
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
 
     }
 
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
 
+    /**
+     *
+     */
     @Before
     public void setUp() {
         o = new Operations();
         test = new Species("aaaa", "bbbb");
     }
 
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }
 
+    /**
+     *
+     */
     @Test
     public void testCreateNewSpecies() {
         Species test = o.createNewSpecies("koivu", "Betula pubescens rubra");
@@ -56,6 +74,9 @@ public class OperationsJUnitTest {
 
     }
 
+    /**
+     *
+     */
     @Test
     public void testCreateNewSpeciesFullData() {
         GrowingMedia gm10 = new GrowingMedia(7, 7, 7, 7, 7);
@@ -73,11 +94,18 @@ public class OperationsJUnitTest {
 
     }
 
+    /**
+     *
+     */
     @Test
     public void testWriteSpeciesToFile() {
 
     }
 
+    /**
+     *
+     * @throws FileNotFoundException
+     */
     @Test
     public void testSpeciesSearchLatin() throws FileNotFoundException {
         String latinName = "Test testins";
@@ -94,6 +122,10 @@ public class OperationsJUnitTest {
 
     }
 
+    /**
+     *
+     * @throws FileNotFoundException
+     */
     @Test
     public void testSpeciesSearchFin() throws FileNotFoundException {
         String finName = "mustilanhortensia";
@@ -107,6 +139,9 @@ public class OperationsJUnitTest {
 
     }
 
+    /**
+     *
+     */
     @Test
     public void testSpeciesSearch() {
         Species test = o.createNewSpeciesFullData("testFin", "Test testins",
@@ -118,6 +153,10 @@ public class OperationsJUnitTest {
 
     }
 
+    /**
+     *
+     * @throws FileNotFoundException
+     */
     @Test
     public void testreadDataFromFile() throws FileNotFoundException {
         o.readDataFromFile("./src/main/resources/Pensasluettelo.csv");

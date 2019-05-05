@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 /**
  *
- * @author vipy
+ * @author vipy Species is an object class for species. Here the data transforms
+ * into a species object.
  */
 public class Species {
 
@@ -16,12 +17,15 @@ public class Species {
     private double adultHeight;
     private double spacing;
     private double amountPerSquare;
-
-    //private ArrayList<Species> friendlistGroundcreapers;
-    //private ArrayList<Species> friendlist300_500;
     private GrowingMedia growMedia;
     private String aurinkoVarjo;
 
+    // Species is created only with a name. Default values are added to other attributes.
+    /**
+     *
+     * @param finnishName
+     * @param latinName
+     */
     public Species(String finnishName, String latinName) {
         this.finnishName = finnishName;
         this.latinName = latinName;
@@ -49,6 +53,18 @@ public class Species {
 
     }
 
+    // Species is created with full data.
+    /**
+     *
+     * @param finnishName
+     * @param latinName
+     * @param zone
+     * @param adultHeight
+     * @param spacing
+     * @param amountPerSquare
+     * @param media
+     * @param type
+     */
     public Species(String finnishName, String latinName, String zone, double adultHeight,
             double spacing, double amountPerSquare, GrowingMedia media, PlantType type) {
         this.latinName = latinName;
@@ -78,6 +94,17 @@ public class Species {
 
     }
 
+    // Species is created with full data, but without plant type.
+    /**
+     *
+     * @param finnishName
+     * @param latinName
+     * @param zone
+     * @param adultHeight
+     * @param spacing
+     * @param amountPerSquare
+     * @param media
+     */
     public Species(String finnishName, String latinName, String zone, double adultHeight,
             double spacing, double amountPerSquare, GrowingMedia media) {
         this.latinName = latinName;
@@ -107,101 +134,172 @@ public class Species {
 
     }
 
+    // Growing zone
+    /**
+     *
+     * @return
+     */
     public String getZone() {
         return zone;
     }
 
+    /**
+     *
+     * @param zone
+     */
     public void setZone(String zone) {
         this.zone = zone;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getAdultHeight() {
         return adultHeight;
     }
 
+    /**
+     *
+     * @param adultHeight
+     */
     public void setAdultHeight(double adultHeight) {
         this.adultHeight = adultHeight;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getSpacing() {
         return spacing;
     }
 
+    /**
+     *
+     * @param spacing
+     */
     public void setSpacing(double spacing) {
         this.spacing = spacing;
     }
 
+    /**
+     *
+     * @return
+     */
     public double getAmountPerSquare() {
         return amountPerSquare;
     }
 
+    /**
+     *
+     * @param amountPerSquare
+     */
     public void setAmountPerSquare(double amountPerSquare) {
         this.amountPerSquare = amountPerSquare;
     }
 
+    /**
+     *
+     * @return
+     */
     public GrowingMedia getGrowMedia() {
         return growMedia;
     }
 
+    /**
+     *
+     * @param growMedia
+     */
     public void setGrowMedia(GrowingMedia growMedia) {
         this.growMedia = growMedia;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getLatinName() {
         return latinName;
     }
 
+    /**
+     *
+     * @param latinName
+     */
     public void setLatinName(String latinName) {
         this.latinName = latinName;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getFinnishName() {
         return finnishName;
     }
 
+    /**
+     *
+     * @param finnishName
+     */
     public void setFinnishName(String finnishName) {
         this.finnishName = finnishName;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getAcronym() {
         return acronym;
     }
 
+    /**
+     *
+     * @param acronym
+     */
     public void setAcronym(String acronym) {
         this.acronym = acronym;
     }
 
+    /**
+     *
+     * @return
+     */
     public PlantType getPlantType() {
         return type;
     }
 
+    /**
+     *
+     * @param type
+     */
     public void setPlantType(PlantType type) {
         this.type = type;
     }
 
-//    public ArrayList<Species> getFriendlistGroundcreapers() {
-//        return friendlistGroundcreapers;
-//    }
-//
-//    public void setFriendlistGroundcreapers(ArrayList<Species> friendlistGroundcreapers) {
-//        this.friendlistGroundcreapers = friendlistGroundcreapers;
-//    }
-//
-//    public ArrayList<Species> getFriendlist300_500() {
-//        return friendlist300_500;
-//    }
-//
-//    public void setFriendlist300_500(ArrayList<Species> friendlist300_500) {
-//        this.friendlist300_500 = friendlist300_500;
-//    }
+    /**
+     *
+     * @return
+     */
     public GrowingMedia getKasvualusta() {
         return growMedia;
     }
 
+    /**
+     *
+     * @param kasvualusta
+     */
     public void setKasvualusta(GrowingMedia kasvualusta) {
         this.growMedia = kasvualusta;
     }
 
+    // toString transforms the species into a csv-compatible string.
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
 

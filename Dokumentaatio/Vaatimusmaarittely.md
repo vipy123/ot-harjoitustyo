@@ -18,21 +18,28 @@ Viime vuosina maisemansuunnittelussa on alettu puhua enenevissä määrin dynaam
 Vaatimuksia ohjelmalle
 ----------------------
 
--   Ohjelmalla voidaan hallita kasvitietokantaa eli lisätä sinne suunnittelussa käytettävää tietoa istutettavista ja kylvettävistä kasvilajeista sekä hakea kasvilajeja tiettyjen kriteerien perusteella.
--   Tarvittavia kasvitietoja ovat mm. Lajin nimitiedot, kasvupaikkavaatimukset, menestymisvyöhykkeet, kuvat, “kaverilajit” ja yhteen sopimattomat lajit.
+-   Ohjelmalla voidaan hallita kasvitietotiedostoa eli lisätä sinne suunnittelussa käytettävää tietoa istutettavista ja kylvettävistä kasvilajeista sekä hakea kasvilajeja tiettyjen kriteerien perusteella.
+-   Tarvittavia kasvitietoja ovat mm. Lajin nimitiedot, kasvupaikkavaatimukset ja menestymisvyöhykkeet.
 -   Kasvitiedot tallennetaan käyttäjän koneelle, jolloin käyttäjä voi muokata tietoja tarvittaessa myös taulukkomuodossa.
--   Ohjelma etsii myös ns. “kaverikasveja” halutun kasvukorkeuden / ekolokeron mukaisesti.
+-   Ohjelma etsii myös ns. “kaverikasveja” halutun ekolokeron mukaisesti.
 
 Jatkokehitysideat
 -----------------
 
--   Lisäksi, jos aikaa jää, voi ohjelma ehdottaa istutuskuvioita valituille kasvilajeille. Tällöin ohjelma luo kullekin taimelle paikan xy-koordinaatistossa ja tulostaa sen esim. Txt- tai csv-muodossa.
+-   Jatkossa ohjelmaa voidaan kehittää luomaan kolmiutotteisia, dynaamisia istutuksia. Se voisi ehdottaa istutuskuvioita valituille kasvilajeille. Tällöin ohjelma luo kullekin taimelle paikan xy-koordinaatistossa ja tulostaa sen esim. Txt- tai csv-muodossa.
 
 Suunnittelu
 -----------
 
 Suuremmat rakennekomponentit
+Ohjelma koostuu: 
+-   javafx-käyttöliittymäluokasta
+-   operations-paketin logic-luokasta, jossa hallitaan toimintoja
+-   Components-paketin komponettiluokista eli kasvilajeista, kasvualustoista ja kasvityypeistä eli Species, PlantType ja GrowingMedia.
+-   Kasvitieto-csv-tiedostosta, joka on nimeltään Pensasluettelo.csv
 
 Miten komponentit yhdistetään
+-   Main-metodi käynnistyy javafx-luokassa avaten samalla yhteyden logic-luokan kautta kasvitieto-tiedostoon. Käyttäjä valitsee painikkeita käyttöliittymässä, joiden mukaan ohjelma ohjaa uuteen näkymään, joko tiedon lisäys-näkymään tai tiedonhakunäkymään. Logic luokka luo tiedostosta lukemalla komponenttiluokat: Species, PlantType ja GrowingMedia sekä niiden väliset yhteydet. Logic lisäksi tallentaa speciesluokat listalle, josta niitä on helppo operoida. Käyttöliittymän kautta käyttäjä lisää tietoja, mistä logic-luokka joko hakee listalta tietoa tai luo komponenttiluokkiin uutta tietoa.
 
 Riippuvuudet tietokantoihin tai rajapintoihin
+-   Ohjelmassa haetaan ja viedään tietoa paikalliseen csv-tiedostoon Operations paketin logic-luokan kautta. Tällöin ohjelma säilyy yksinkertaisena eikä tietokantayhteyttä välttämättä tarvita. Se on sopiva yksittäisen ihmisen tai esim. yrityksen käyttöön. Jatkossa ohjelmaa on edelleen mahdollista kehittää tietokantaohjelmaksi.

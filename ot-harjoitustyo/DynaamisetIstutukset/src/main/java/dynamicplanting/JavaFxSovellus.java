@@ -32,14 +32,46 @@ import logic.*;
  */
 public class JavaFxSovellus extends Application {
 
+    /**
+     *
+     */
     public static Operations o = new Operations();
+
+    /**
+     *
+     */
     public GrowingMedia m;
+
+    /**
+     *
+     */
     public Scene startScene;
+
+    /**
+     *
+     */
     public Scene addDataScene;
+
+    /**
+     *
+     */
     public Scene addNewSpeciesScene;
+
+    /**
+     *
+     */
     public Scene searchSpeciesScene;
+
+    /**
+     *
+     */
     public Stage window = new Stage();
 
+    /**
+     * This is the main method.
+     * @param args
+     * @throws FileNotFoundException
+     */
     public static void main(String[] args) throws FileNotFoundException {
 
         o.readDataFromFile("./src/main/resources/Pensasluettelo.csv");
@@ -47,6 +79,11 @@ public class JavaFxSovellus extends Application {
 
     }
 
+    /**
+     * This is the start window.
+     * @param window
+     * @throws Exception
+     */
     @Override
     public void start(Stage window) throws Exception {
         //Ensimmäinen näkymä.
@@ -61,6 +98,10 @@ public class JavaFxSovellus extends Application {
         window.show();
     }
 
+    /**
+     * This scene method is the start scene.
+     * @return
+     */
     public Scene startScene() {
         window.setTitle("Dynaamiset istutukset");
         GridPane componentGroup1 = new GridPane();
@@ -85,6 +126,10 @@ public class JavaFxSovellus extends Application {
 
     }
 
+    /**
+     * This scene method is one step towards adding plant data.
+     * @return
+     */
     public Scene addDataScene() {
         // Tiedon lisäysnäkymä.
         GridPane componentGroupAddData = new GridPane();
@@ -116,6 +161,10 @@ public class JavaFxSovellus extends Application {
         return sceneAdd;
     }
 
+    /**
+     * This scene method is for adding new species data by user given attributes.
+     * @return
+     */
     public Scene addNewSpeciesScene() {
         //Lisätään uusi laji -näkymä
         GridPane componentGroupAddNewSpecies = new GridPane();
@@ -328,6 +377,10 @@ public class JavaFxSovellus extends Application {
         return sceneAddSpecies;
     }
 
+    /**
+     * This scene is for searching species with user given attributes.
+     * @return
+     */
     public Scene searchSpeciesScene() {
         //Tiedonhakunäkymä
         GridPane componentGroupSearchSpecies = new GridPane();
@@ -448,7 +501,7 @@ public class JavaFxSovellus extends Application {
         adultheightTextField.setPrefWidth(100);
 
         ScrollPane resultSpecies = new ScrollPane();
-        resultSpecies.setPrefSize(300, 500);
+        resultSpecies.setPrefSize(500, 500);
 
         Button backToStartButton4 = new Button("Palaa takaisin");
         //Set the components to the Gridpane
@@ -494,7 +547,7 @@ public class JavaFxSovellus extends Application {
         componentGroupSearchSpecies.add(searchSpeciesButton, 3, 23);
 
         componentGroupSearchSpecies.add(backToStartButton4, 3, 25);
-        componentGroupSearchSpecies.add(resultSpecies, 3, 26);
+        componentGroupSearchSpecies.add(resultSpecies, 9, 26);
 
         componentGroupSearchSpecies.setHgap(10);
         componentGroupSearchSpecies.setVgap(10);

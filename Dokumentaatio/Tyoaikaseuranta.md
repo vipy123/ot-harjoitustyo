@@ -13,4 +13,7 @@ Työaikakirjanpito Ohjelmistotekniikka Vilma Pylkkö
 |  23-26.4.2019   |   12   |           Netbeans- ja javapäivityksen jälkihässäkkä versioiden yhteensopivuusongelmien selvittely |
 |  26.4.2019   |   4   |           Vertaisarviointi |
 |  27.4.2019   |   4   |           Ohjelman toimintojen koodausta, kuten lajihaku, datan kirjoittaminen tiedostoon |
-|  yht   |   56   |            |
+|  3.5.2019   |   4   |           Ohjelman toimintojen koodausta |
+|  4.5.2019   |   6   |           Ohjelman toimintojen koodausta, testien täydennystä ja debuggausta, ongelmien korjaamista |
+|  5.5.2019   |   8   |           Ohjelman viilausta, testien kattavuuden parantamista ja debuggausta, dokumantaation parantamista |
+|  yht   |   68   |            |

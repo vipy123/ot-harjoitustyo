@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package components;
 
 /**
@@ -12,14 +8,26 @@ public class PlantType {
 
     private String name;
 
+    /**
+     *
+     * @param nimi
+     */
     public PlantType(String nimi) {
         this.name = nimi;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @param nimi
+     */
     public void setName(String nimi) {
         this.name = nimi;
     }
