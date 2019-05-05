@@ -94,17 +94,14 @@ public class JavaFxSovellus extends Application {
         Label howtoText2 = new Label("Lisää lajitietoa");
         Button addNewSpeciesButton = new Button("Lisää uusi laji");
 
-        Button addToExistingButton = new Button("Lisää tietoa lajiin...");
-        TextField addToExistingTextFielt = new TextField();
-        addToExistingTextFielt.setPromptText("Anna lajin suomenkielinen nimi.");
-        addToExistingTextFielt.setPrefWidth(300);
+
         Button backToStartButton = new Button("Palaa takaisin");
 
         componentGroupAddData.add(nimiTeksti2, 3, 1);
         componentGroupAddData.add(howtoText2, 3, 4);
         componentGroupAddData.add(addNewSpeciesButton, 3, 5);
-        componentGroupAddData.add(addToExistingButton, 3, 6);
-        componentGroupAddData.add(addToExistingTextFielt, 8, 6);
+
+
         componentGroupAddData.add(backToStartButton, 3, 7);
 
         componentGroupAddData.setHgap(10);
